@@ -1,0 +1,18 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+Before loading the script.
+NotADirectoryError: [WinError 267] The directory name is invalid: 'D:\\Culmination Project\\Culmination-Project\\Culmination_Project\\game\\script.rpy'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "D:\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "D:\renpy-8.0.3-sdk\renpy\main.py", line 396, in main
+    for fn in os.listdir(dir):
+NotADirectoryError: [WinError 267] The directory name is invalid: 'D:\\Culmination Project\\Culmination-Project\\Culmination_Project\\game\\script.rpy'
+
+Windows-10-10.0.19043 AMD64
+Ren'Py 8.0.3.22090809
+ 
+Mon Sep 19 15:21:55 2022
