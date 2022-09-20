@@ -1,5 +1,5 @@
 ﻿# The script of the game goes in this file.
-
+define fade = Fade(0.5, 0.0, 0.5, color="#fff")
 
 
 # The game starts here.
@@ -14,9 +14,9 @@ label start:
     if player == "":
         $ player = "Cameron"
 
-    show bg placeholder:
+    show bg placeholder with fade:
     #This is just the placeholder for the background
-     pos (0, 0) zpos 1.0 yzoom 1.0 zoom 3.5 
+        pos (0, 0) zpos 1.0 yzoom 1.0 zoom 3.5 
 
     show character:
     #This is the default for the character talking to the player
@@ -42,7 +42,7 @@ label start:
         "I feel…okay, surprisingly.":
             call Okay
 
-    p "So..what happens now?"
+    p "{cps=20}So...what happens now?{/cps}"
 
     m "Good Question! So you have to go up to Dearth, and go to our processing center!"
 
@@ -52,7 +52,7 @@ label start:
 
     m "Also, it’s just a play on words of Dead Earth, since everything is dead and it’s like Earth."
 
-    p "Is it like Hell? Heaven? Purgatory?....or Florida?"
+    p "Is it like Hell? Heaven? Purgatory?{cps=15}....or Florida?{/cps}"
 
     m "Crazy that you know about that! Let’s get you to the processing center to find out!"
 
@@ -60,15 +60,19 @@ label start:
 
     m "Don’t worry, you’ll see, just come in with me."
 
-    m "So…how was the weather down there?"
+    m "{cps=10}So....{/cps} how was the weather down there?"
 
-    p "..."
+    p "{cps=5}...{/cps}"
 
-    m "....Do you come here often?"
+    m "{cps=10}....{/cps}Do you come here often?"
 
     p "Too soon."
 
     m "I know...sorry, just making small talk."
+
+    show bg placeholder with fade:
+    #This is just the placeholder for the background
+        pos (0, 0) zpos 1.0 yzoom 1.0 zoom 3.5
 
     #Hides last sprite
     hide character
