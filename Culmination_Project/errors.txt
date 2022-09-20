@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label Peace is defined twice, at File "game/script.rpy", line 132:
-    label Peace:
-and File "game/script.rpy", line 150:
-    label Peace:
-
+File "game/screens.rpy", line 293: end of line expected.
+    if  renpy.get_screen("main_menu")::
+                                      ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Sep 20 02:31:18 2022
+Tue Sep 20 13:15:00 2022

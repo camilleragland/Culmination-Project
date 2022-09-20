@@ -41,7 +41,7 @@ label start:
         "I feel at peace.":
             call Peace
         
-        "I feel…okay, surprisingly.":
+        "I feel...okay, surprisingly.":
             call Okay
 
     p "{cps=20}So...what happens now?{/cps}"
