@@ -1,13 +1,11 @@
-﻿= I'm sorry, but an uncaught exception occurred.
+﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 6, in script
-    define p = Character("[player]", color )
-  File "game/script.rpy", line 6, in script
-    define p = Character("[player]", color )
-  File "game/script.rpy", line 6, in <module>
-    define p = Character("[player]", color )
-TypeError: type() takes 1 or 3 arguments
+  File "game/characters.rpy", line 15, in script
+    image nora angy left = ""
+  File "game/characters.rpy", line 15, in script
+    image nora angy left = ""
+Exception: An empty string cannot be used as a displayable.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,24 +14,20 @@ Full traceback:
     renpy.main.main()
   File "D:\renpy-8.0.3-sdk\renpy\main.py", line 558, in main
     renpy.game.context().run(node)
-  File "game/script.rpy", line 6, in script
-    define p = Character("[player]", color )
+  File "game/characters.rpy", line 15, in script
+    image nora angy left = ""
   File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "game/script.rpy", line 6, in script
-    define p = Character("[player]", color )
-  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 2441, in execute
-    self.set()
-  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 2455, in set
-    value = renpy.python.py_eval_bytecode(self.code.bytecode)
-  File "D:\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 6, in <module>
-    define p = Character("[player]", color )
-  File "D:\renpy-8.0.3-sdk\renpy\character.py", line 1580, in Character
-    return type(kind)(name, kind=kind, **properties)
-TypeError: type() takes 1 or 3 arguments
+  File "game/characters.rpy", line 15, in script
+    image nora angy left = ""
+  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1234, in execute
+    renpy.exports.image(self.imgname, img)
+  File "D:\renpy-8.0.3-sdk\renpy\exports.py", line 327, in image
+    d = renpy.easy.displayable(d)
+  File "D:\renpy-8.0.3-sdk\renpy\easy.py", line 112, in displayable
+    raise Exception("An empty string cannot be used as a displayable.")
+Exception: An empty string cannot be used as a displayable.
 
 Windows-10-10.0.19043 AMD64
 Ren'Py 8.0.3.22090809
 Culmination_Project 1.0
-Mon Sep 19 20:25:31 2022
+Mon Sep 19 22:31:06 2022
