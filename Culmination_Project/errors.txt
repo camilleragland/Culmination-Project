@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/characters.rpy", line 2: unexpected EOF while parsing
-    Character("[player]", color = "#FFFFFF", what_slow_cps = )
-                                                              ^
+The label Peace is defined twice, at File "game/script.rpy", line 132:
+    label Peace:
+and File "game/script.rpy", line 150:
+    label Peace:
+
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Sep 19 23:28:35 2022
+Tue Sep 20 02:31:18 2022
