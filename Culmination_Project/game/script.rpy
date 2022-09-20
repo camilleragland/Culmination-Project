@@ -101,7 +101,7 @@ label start:
     show bg placeholder with fade:
     #This is just the placeholder for the background
         pos (0, 0) zpos 1.0 yzoom 1.0 zoom 3.5
-        
+
 #This is Scene 3
 
     #Hides last sprite
@@ -147,7 +147,6 @@ label start:
 #This is Scene 2
     label Questioning2:
         m "You’ll look good [player]! Also, you don’t need them anymore, you’re a ghost!"
-        #This returns you to continue the dialogue
         return
 
     label Sheet:
