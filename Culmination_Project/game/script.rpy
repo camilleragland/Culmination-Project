@@ -1,19 +1,6 @@
 ﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
 
-define p = Character("[player]", color = "#FFFFFF")
-
-define m = Character("Micheal", color = "#F1C0E9")
-
-define n = Character("Nora")
-
-define l = Character("Lucrecia")
-
-define b = Character("Beazley")
-
-define j = Character("Jaisen")
 
 # The game starts here.
 
