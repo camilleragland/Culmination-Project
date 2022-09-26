@@ -123,7 +123,7 @@ init python:
 
 style window is default
 style say_label is default
-style say_dialogue is default
+style alogue is default
 style say_thought is say_dialogue
 
 style namebox is default
@@ -139,25 +139,26 @@ style window:
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
+    xpos 470
     xanchor gui.name_xalign
-    xsize gui.namebox_width
-    ypos gui.name_ypos
-    ysize gui.namebox_height
+    xsize 300
+    ypos -0.1
+    ysize 65
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
     properties gui.text_properties("name", accent=True)
-    xalign gui.name_xalign
+    xalign 0.5
     yalign 0.5
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
+    xpos 520
+    xsize 925
+    size 40
     ypos gui.dialogue_ypos
 
     adjust_spacing False
@@ -179,8 +180,8 @@ screen input(prompt):
 
         vbox:
             xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
+            xpos 520
+            xsize 920
             ypos gui.dialogue_ypos
 
             text prompt style "input_prompt"
@@ -244,19 +245,17 @@ screen quick_menu():
     if quick_menu:
 
         hbox:
+            yoffset -50
             style_prefix "quick"
 
             xalign 0.5
             yalign 1.0
 
             textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Load") action ShowMenu('load')
+            textbutton _("Menu") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -274,6 +273,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
+    size 30
 
 
 ################################################################################

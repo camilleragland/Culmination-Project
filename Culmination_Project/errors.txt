@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 68: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+File "game/script.rpy", line 76: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    ^
+
+File "game/script.rpy", line 82: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
     subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
     ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Sep 26 05:36:59 2022
+Mon Sep 26 07:07:50 2022

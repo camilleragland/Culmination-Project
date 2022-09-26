@@ -25,9 +25,11 @@ label start:
 #This is Scene 1
     #These display lines of dialogue.
     m "Hey [player]! How are you feeling? "
+    hide michael neutral
 
     #This is a menu of choices, and {b} bolds text
     menu:
+        
         "{b}What just happened? Who are you? Where am I?{b}":
 
             #This calls the responses of the choices
@@ -42,7 +44,7 @@ label start:
         "I feel...okay, surprisingly.":
             call Okay
 
-    show michael neutral with dissolve
+    show michael neutral with dissolve:
     p "{cps=20}So...what happens now?{/cps}"
 
     m "Good Question! So you have to go up to Dearth, and go to our processing center!"
@@ -55,10 +57,12 @@ label start:
 
     p "Is it like Hell? Heaven? Purgatory?{cps=15}....or Florida?{/cps}"
 
-    show michael happy with dissolve
+    show michael happy with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
     m "Crazy that you know about that! Let’s get you to the processing center to find out!"
 
-    show michael neutral with dissolve
+    show michael neutral with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
     p "Processing Center?"
 
     m "Don’t worry, you’ll see, just come in with me."
@@ -132,21 +136,29 @@ label start:
 
 #This is Scene 1
     label Questioning:
+        show michael neutral with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
         m "Well [player], you just died. I’m Micheal, {cps=15}aaaaaand{/cps} this is the Afterlife!"
+        
         #This returns you to continue the dialogue
         return
 
+    
     label Trash:
+        show michael neutral with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
         m "Sucks to hear about that bud, you’ll feel better soon though. Anyways, welcome to the Afterlife! I’m the angel Micheal!"
         return
 
     label Peace:
-        show michael happy with dissolve
+        show michael happy with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
         m "Well, you took that surprisingly well. Anyways, welcome to the Afterlife [player]! I’m the angel Micheal!"
         return
 
     label Okay:
-        show michael happy with dissolve
+        show michael happy with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
         m "That’s good. Welcome to the Afterlife [player]! I’m the angel Micheal!"
         return
 
@@ -165,6 +177,6 @@ label start:
 
     label Nothing:
         show michael neutral right:
-            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+            subpixel True pos (0.25, 0)  yzoom 1.0 zoom 0.32
         m "Come on, we don’t have all of eternity.{cps=15} Oh, wait....{/cps}we do, but I have better things to do on a Tuesday"
         return

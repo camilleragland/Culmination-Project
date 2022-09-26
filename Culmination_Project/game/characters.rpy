@@ -1,7 +1,7 @@
 #Characters are defined here
-define p = Character("[player]", color = "#FFFFFF", what_slow_cps = 40)
+define p = Character("[player]", color = "#000000", what_slow_cps = 40)
 
-define m = Character("Michael", color = "#F1C0E9", what_slow_cps = 40, image = "micheal")
+define m = Character("Michael", color = "#e36dcf", what_slow_cps = 40, image = "micheal")
 
 define n = Character("Nora", what_slow_cps = 40)
 
