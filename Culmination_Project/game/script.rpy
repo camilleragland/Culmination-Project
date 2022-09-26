@@ -8,6 +8,7 @@ define fade = Fade(0.5, 0.0, 0.5, color="#fff")
 # The game starts here.
 
 label start:
+    with dissolve
     #Asks player for name
     $ player =  renpy.input("Hey, What's your name?", default = "Cameron")
 

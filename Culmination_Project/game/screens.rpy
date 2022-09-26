@@ -23,6 +23,7 @@ style hyperlink_text:
 
 style gui_text:
     properties gui.text_properties("interface")
+    color '#da9bcf'
 
 
 style button:
@@ -254,6 +255,7 @@ screen quick_menu():
             textbutton _("Back") action Rollback()
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Save") action ShowMenu('save')
+            textbutton _("Quick Save") action QuickSave()
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Menu") action ShowMenu('preferences')
 
@@ -623,7 +625,7 @@ screen file_slots(title):
                 input:
                     style "page_label_text"
                     value page_name_value
-
+                    size 70
             ## The grid of file slots.
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
@@ -963,9 +965,9 @@ screen help():
 
         vbox:
             spacing 23
-
+            
             hbox:
-
+                
                 textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
                 textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
@@ -1100,11 +1102,13 @@ style help_button_text:
 style help_label:
     xsize 375
     right_padding 30
+    
 
 style help_label_text:
-    size gui.text_size
+    size 50
     xalign 1.0
     text_align 1.0
+    
 
 
 
