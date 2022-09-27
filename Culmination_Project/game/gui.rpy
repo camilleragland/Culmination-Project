@@ -292,7 +292,7 @@ define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 
 ## The frame that is used as part of the notify screen.
-define gui.notify_frame_borders = Borders(24, 8, 60, 8)
+define gui.notify_frame_borders = Borders(30, 90, 30, 30)
 
 ## Should frame backgrounds be tiled?
 define gui.frame_tile = False
