@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1271: style property Frame is not known.
-    Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
-         ^
+File "game/script.rpy", line 11: invalid syntax
+    renpy.movie_cutscene("scene-1.webm") with dissolve
+                                          ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Sep 26 10:11:18 2022
+Tue Sep 27 05:30:05 2022

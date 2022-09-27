@@ -8,9 +8,9 @@ define fade = Fade(0.5, 0.0, 0.5, color="#fff")
 # The game starts here.
 
 label start:
-    $ renpy.movie_cutscene("scene-1.webm")
+    $ renpy.movie_cutscene("scene-1.webm") 
     #Asks player for name
-    $ player =  renpy.input("Hey, What's your name?", default = "Cameron")
+    $ player =  renpy.input("Hey, What's your name?", default = "Cameron") 
 
     $ player = player.strip()
     
@@ -60,14 +60,24 @@ label start:
     p "Is it like Hell? Heaven? Purgatory?{cps=15}....or Florida?{/cps}"
 
     show michael happy with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
-    m "Crazy that you know about that! Let’s get you to the processing center to find out!"
+        xpos 0.25, ypos 0 zpos 1.0 yzoom 1.0 zoom 0.32
+        ease 1.3 xpos -0.1 ypos 0.3 
+
+    
 
     show michael neutral with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
-    p "Processing Center?"
+        xpos -0.1 ypos 0.3 zpos 1.0 yzoom 1.0 zoom 0.32
 
+    
+
+    m "Crazy that you know about that! Let’s get you to the processing center to find out!"
+
+    p "Processing Center?"
+    hide micheal neutral with dissolve
     m "Don’t worry, you’ll see, just come in with me."
+    
+    show elevator with dissolve
+    
 
     scene scene1 bg
     show michael nervous with fade:
@@ -156,6 +166,7 @@ label start:
         show michael happy with dissolve:
             subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
         m "Well, you took that surprisingly well. Anyways, welcome to the Afterlife [player]! I’m the angel Micheal!"
+
         return
 
     label Okay:

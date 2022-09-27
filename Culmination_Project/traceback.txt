@@ -1,47 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 11, in script
-    $ renpy.movie_cutscene("scene-1.webm")
-  File "game/script.rpy", line 11, in <module>
-    $ renpy.movie_cutscene("scene-1.webm")
-OSError: Couldn't find file 'scene-1.webm'.
+  File "game/script.rpy", line 170, in script
+    return
+Exception: Could not find return label ('game/script.rpy', 1664267657, 21).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 11, in script
-    $ renpy.movie_cutscene("scene-1.webm")
-  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 11, in <module>
-    $ renpy.movie_cutscene("scene-1.webm")
-  File "D:\renpy-8.0.3-sdk\renpy\exports.py", line 1599, in movie_cutscene
-    rv = renpy.ui.interact(suppress_overlay=True,
-  File "D:\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "D:\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "D:\renpy-8.0.3-sdk\renpy\display\core.py", line 4103, in interact_core
-    renpy.audio.audio.periodic()
-  File "D:\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1166, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
-  File "D:\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1144, in periodic_thread_main
-    periodic_pass()
-  File "D:\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1086, in periodic_pass
-    c.periodic()
-  File "D:\renpy-8.0.3-sdk\renpy\audio\audio.py", line 517, in periodic
-    topf = load(filename)
-  File "D:\renpy-8.0.3-sdk\renpy\audio\audio.py", line 70, in load
-    rv = renpy.loader.load(fn)
-  File "D:\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'scene-1.webm'.
+  File "game/script.rpy", line 170, in script
+    return
+  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1782, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "D:\renpy-8.0.3-sdk\renpy\execution.py", line 726, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/script.rpy', 1664267657, 21).
 
 Windows-10-10.0.19043 AMD64
 Ren'Py 8.0.3.22090809
 Dearth 1.0
-Mon Sep 26 21:53:13 2022
+Tue Sep 27 05:28:37 2022
