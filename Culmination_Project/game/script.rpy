@@ -8,11 +8,12 @@ define fade = Fade(0.5, 0.0, 0.5, color="#fff")
 # The game starts here.
 
 label start:
-    with dissolve
+    $ renpy.movie_cutscene("scene-1.webm")
     #Asks player for name
     $ player =  renpy.input("Hey, What's your name?", default = "Cameron")
 
     $ player = player.strip()
+    
 
     #This is a default name
     if player == "":
