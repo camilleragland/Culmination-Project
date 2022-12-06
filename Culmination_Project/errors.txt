@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 11: invalid syntax
-    renpy.movie_cutscene("scene-1.webm") with dissolve
-                                          ^
-    
+File "game/script.rpy", line 129: expected simple expression
+    play music "audio/hallyway.ogg" fadein 
+                                           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Sep 27 05:30:05 2022
+Tue Dec  6 05:57:20 2022
