@@ -4,6 +4,8 @@
 #This is a fade to white transition
 define fade = Fade(0.5, 0.0, 0.5, color="#fff")
 
+#Movie backgrounds
+image walk_hall = Movie(play="images/hallway.webm")
 
 # The game starts here.
 
@@ -98,12 +100,15 @@ label start:
 
     p "{cps=5}...{/cps}"
 
+    pause 0.8
     show michael nervous right with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
 
     play sound "audio/micheal-neutral.ogg" volume 0.1
     m "{cps=10}....{/cps}Do you come here often?"
 
+    
+    play sound "audio/elevator-ding.ogg" volume 0.2
     show bg elevatordearth
 
     menu:
@@ -118,17 +123,25 @@ label start:
         "Good One. (Sarcastic)":
             call Nervous
 
-    show bg elevatorintake 
+    pause 0.6
+    p "{cps=5}...{/cps}"
 
-    play sound "audio/micheal-happy.ogg" volume 0.1
+    
+    show bg elevatorintake 
+    
+    
+    play sound "audio/elevator-ding.ogg" volume 0.2
     show michael happy with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     m "Alright, this is our floor! Right, this way!"
+    play sound "audio/hallway.ogg" volume 0.1 
+
     stop music fadeout 0.5
     hide michael happy
-    play music "audio/hallway.ogg" fadein 0.3 volume 0.5
-    show bg placeholder with fade:
-        pos (0, 0) zpos 1.0 yzoom 1.0 zoom 3.5
+    play music "audio/hallway.ogg" fadein 0.3 volume 0.2
+    
+    $ renpy.movie_cutscene("hallway.webm") 
+    stop sound fadeout 0.5
     
     menu:
         "{b}Oh my God! Why do I look like this?! Where are my hands?{b}":
