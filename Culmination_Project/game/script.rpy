@@ -143,6 +143,10 @@ label start:
     $ renpy.movie_cutscene("hallway.webm") 
     stop sound fadeout 0.5
     
+    show bg reflection with dissolve
+    pause 0.7
+    p "{cps=5}...{/cps}"
+
     menu:
         "{b}Oh my God! Why do I look like this?! Where are my hands?{b}":
             call Questioning2
@@ -152,7 +156,9 @@ label start:
 
         "(Say Nothing)":
             call Nothing
-
+    
+    play sound "audio/micheal-neutral.ogg" volume 0.2
+    m "Now let's go into the intake room!"
 #This is Scene 3
     scene bg placeholder with fade
     show michael really angry with dissolve:
@@ -269,20 +275,20 @@ label start:
 
 #This is Scene 3
     label Questioning2:
-        show michael happy:
-            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        show michael happy with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
         m "You look good [player]! Also, you don’t need them anymore, you’re a ghost!"
         return
 
     label Sheet:
-        show michael happy:
-            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        show michael happy with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
         m "You’re a ghost silly! Have you never seen Casper? A Christmas Carol? GHOSTBUSTERS?"
         return
 
     label Nothing:
-        show michael neutral right:
-            subpixel True pos (0.25, 0)  yzoom 1.0 zoom 0.32
+        show michael neutral right with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
         m "Come on, we don’t have all of eternity.{cps=15} Oh, wait....{/cps}we do, but I have better things to do on a Tuesday"
         return
     

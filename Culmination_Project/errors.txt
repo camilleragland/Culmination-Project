@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 137: expected end of line
-    play sound "audio/hallway.ogg" volume 0.1 f
-                                              ^
+File "game/script.rpy", line 148: expected statement.
+    p 
+      ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 07:40:08 2022
+Tue Dec  6 14:00:48 2022
