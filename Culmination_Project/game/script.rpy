@@ -160,31 +160,38 @@ label start:
     play sound "audio/micheal-neutral.ogg" volume 0.2
     m "Now let's go into the intake room!"
 #This is Scene 3
+
     scene bg placeholder with fade
+    play sound "audio/micheal-mad.ogg" volume 0.2
     show michael really angry with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     m "Why does Rafael keep putting chairs here?! I told him we keep getting complaints from HR for being insensitive!"
 
+    play sound "audio/micheal-neutral.ogg" volume 0.1
     show michael oops with dissolve
     m "{i}sigh{/i}...Anyway just sit tight over there."
 
+    play sound "audio/micheal-neutral.ogg" volume 0.1
     show michael nervous right with dissolve
     m "Oops! I mean...float?"
 
     p "umm...sure."
     hide michael with dissolve
 
+    play sound "audio/lucrecia-mad.ogg" volume 0.2
     show lucrecia angry right with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     l "Ay, Dios Mio! Rafael keeps putting these chairs here! We’re going to get more complaints from the new souls!"
 
+    play sound "audio/lucrecia-happy.ogg" volume 0.2
     show lucrecia with dissolve
     show lucrecia happy with dissolve
     l "Hola mi amor! Welcome to Dearth! I’m Lucrecia the ambassador for Heaven!"
     hide lucrecia with dissolve
 
+    
     show nora angry right with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     n "Jesus! Raf needs to stop with these chairs! It’s not funny anymore! "
     show nora with dissolve
     show nora happy with dissolve
@@ -192,7 +199,7 @@ label start:
     hide nora with dissolve
 
     show beazley angry right with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     b "{i}sigh{/i}...Can we just write Rafael up for these chairs?"
     show beazley with dissolve
     show beazley happy with dissolve
@@ -200,7 +207,7 @@ label start:
     hide beazley with dissolve
 
     show nora angry right with dissolve:
-        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     n "{b}BEAZLEY! CHANGE THOSE RIDICULOUS SHEETS! YOU’RE NOT SATAN!{/b}"
     #Hides last sprite
     hide character
