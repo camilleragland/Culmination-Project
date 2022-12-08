@@ -41,16 +41,16 @@ label start:
         "{b}What just happened? Who are you? Where am I?{b}":
 
             #This calls the responses of the choices
-            call Questioning from _call_Questioning
+            call Questioning
 
         "Like absolute trash":
-            call Trash from _call_Trash 
+            call Trash 
 
         "I feel at peace.":
-            call Peace from _call_Peace
+            call Peace
         
         "I feel...okay, surprisingly.":
-            call Okay from _call_Okay
+            call Okay
 
     show michael neutral with dissolve:
     p "{cps=20}So...what happens now?{/cps}"
@@ -115,13 +115,13 @@ label start:
         
         "{b}Too soon...{b}":
 
-            call Nervous from _call_Nervous
+            call Nervous
 
         "Really?":
-            call Nervous from _call_Nervous_1
+            call Nervous
 
         "Good One. (Sarcastic)":
-            call Nervous from _call_Nervous_2
+            call Nervous
 
     pause 0.6
     p "{cps=5}...{/cps}"
@@ -149,19 +149,19 @@ label start:
 
     menu:
         "{b}Oh my God! Why do I look like this?! Where are my hands?{b}":
-            call Questioning2 from _call_Questioning2
+            call Questioning2
 
         "Why do I have this sheet over me?":
-            call Sheet from _call_Sheet
+            call Sheet
 
         "(Say Nothing)":
-            call Nothing from _call_Nothing
+            call Nothing
     
     play sound "audio/micheal-neutral.ogg" volume 0.2
     m "Now let's go into the intake room!"
 #This is Scene 3
 
-    scene bg judgement with fade
+    scene bg placeholder with fade
     play sound "audio/micheal-mad.ogg" volume 0.2
     show michael really angry with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
