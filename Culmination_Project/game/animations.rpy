@@ -16,4 +16,4 @@ image elevator:
     parallel:
         yalign 0.0
         easeout 1.0 yalign 0.25
-    
+

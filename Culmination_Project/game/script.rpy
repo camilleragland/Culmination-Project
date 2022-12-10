@@ -38,7 +38,7 @@ label start:
     #This is a menu of choices, and {b} bolds text
     menu:
         
-        "{b}What just happened? Who are you? Where am I?{b}":
+        "What just happened?! Who are you?! Where am I?!":
 
             #This calls the responses of the choices
             call Questioning from _call_Questioning
@@ -113,7 +113,7 @@ label start:
 
     menu:
         
-        "{b}Too soon...{b}":
+        "Too soon...":
 
             call Nervous from _call_Nervous
 
@@ -148,7 +148,7 @@ label start:
     p "{cps=5}...{/cps}"
 
     menu:
-        "{b}Oh my God! Why do I look like this?! Where are my hands?{b}":
+        "Oh my God! Why do I look like this?! Where are my hands?!":
             call Questioning2 from _call_Questioning2
 
         "Why do I have this sheet over me?":
@@ -189,26 +189,114 @@ label start:
     l "Hola mi amor! Welcome to Dearth! I’m Lucrecia the ambassador for Heaven!"
     hide lucrecia with dissolve
 
-    
+    play sound "audio/nora-mad.ogg" volume 0.2
     show nora angry right with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     n "Jesus! Raf needs to stop with these chairs! It’s not funny anymore! "
     show nora with dissolve
+    play sound "audio/nora-happy.ogg" volume 0.2
     show nora happy with dissolve
     n "Hellooooo [player], I’m Nora, welcome! I’m the ambassador for Purgatory, and can’t wait to hear about you!"
     hide nora with dissolve
 
+    play sound "audio/beazley-mad.ogg" volume 0.4
     show beazley angry right with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     b "{i}sigh{/i}...Can we just write Rafael up for these chairs?"
     show beazley with dissolve
+    play sound "audio/beazley-happy.ogg" volume 0.3
     show beazley happy with dissolve
     b "Hello, I’m Beazley, welcome, welcome. I’m the ambassador of Hell, and I can't wait to hear from you."
-    hide beazley with dissolve
 
-    show nora angry right with dissolve:
-        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/nora-mad.ogg" volume 0.2
+    show nora angry left with hpunch:
+        subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     n "{b}BEAZLEY! CHANGE THOSE RIDICULOUS SHEETS! YOU’RE NOT SATAN!{/b}"
+
+    play sound "audio/beazley-mad.ogg" volume 0.4
+    show beazley sad right with dissolve
+    b "I’m just getting into character honey! Satan asked me to cover his shift for today!"
+
+    play sound "audio/nora-mad.ogg" volume 0.2
+    n "Well, you’re not Satan, Beazley! Now take them off!"
+
+    play sound "audio/beazley-mad.ogg" volume 0.4
+    show beazley angry right with dissolve 
+    b "I’LL TAKE THEM OFF WHEN HELL FREEZES OVER!"
+    hide nora with dissolve
+
+    show lucrecia neutral left with dissolve:
+        subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    show popcorn with dissolve:
+        subpixel True pos (0.5, 0.45) zpos 1.0 yzoom 1.0 zoom 0.32
+    l "{i}Crunch, Crunch, Crunch{/i}"
+
+    hide lucrecia with dissolve
+    hide popcorn with dissolve
+
+    
+    play sound "audio/nora-mad.ogg" volume 0.2
+    show nora angry left with hpunch:
+        subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    n "{b}WELL, IT WAS 5 DEGREES YESTERDAY!{/b}"
+    
+    play sound "audio/beazley-neutral.ogg" volume 0.4
+    show beazley neutral right with dissolve
+    b "{cps=10}...oh...{/cps}"
+    play sound "audio/beazley-happy.ogg" volume 0.3
+    show beazley happy closed with dissolve
+    b "Good thing this is insulated then!"
+    
+    play sound "audio/nora-happy.ogg" volume 0.2
+    show nora neutral right with dissolve
+    n "{i}sigh...{\i}"
+
+    hide beazley with dissolve
+    hide nora with dissolve 
+
+
+    show jaisen with dissolve:
+        subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    show booze with dissolve:
+        subpixel True pos (0.3, 0.45) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/jaisen-neutral.ogg" volume 0.5
+    j "Haha! Raf is hilarious with these chairs man!"
+
+    show lucrecia neutral left:
+        subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/lucrecia-neutral.ogg" volume 0.3
+    l "Aye Dio..."
+    hide lucrecia
+
+    show nora angry left with dissolve:
+        subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/nora-neutral.ogg" volume 0.2
+    n "Really? The Booooze Jaisen?"
+
+    play sound "audio/jaisen-happy.ogg" volume 0.4
+    show jaisen happy with dissolve
+    j "What? It’s 5’0 clock always in Florida!"
+    j "Nice sheet, Beazley!"
+
+    hide nora with dissolve
+
+    show beazley happy closed with dissolve:
+        subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/beazley-happy.ogg" volume 0.4
+    b "Thanks! They’re insulated. It’s 5 degrees in Hell right now."
+    
+    hide beazley with dissolve
+    hide jaisen with dissolve
+    hide booze with dissolve
+
+    show michael really angry with vpunch:
+        subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/micheal-mad.ogg" volume 0.3
+    m "Hey guys! Can you get started here? I have a 7:00 bowling party to go to in Purgatory, and I don’t want to be late."
+
+#This is Scene 4
+    scene bg judgement2 with fade
+#This is Scene 5
     #Hides last sprite
     hide character
 

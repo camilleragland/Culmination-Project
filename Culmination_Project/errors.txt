@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 148: expected statement.
-    p 
-      ^
+File "game/script.rpy", line 298: expected 'simple_expression' not found.
+    scene bg judgement2 with 
+                             ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec  6 14:00:48 2022
+Sat Dec 10 11:56:15 2022
