@@ -159,8 +159,10 @@ label start:
     
     play sound "audio/micheal-neutral.ogg" volume 0.2
     m "Now let's go into the intake room!"
-#This is Scene 3
+    stop sound fadeout 0.5
 
+#This is Scene 3
+    play music "audio/judgement.ogg" volume 0.5 fadein 0.5
     scene bg judgement with fade
     play sound "audio/micheal-mad.ogg" volume 0.2
     show michael really angry with dissolve:
@@ -293,9 +295,9 @@ label start:
         subpixel True pos (0.5, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
     play sound "audio/micheal-mad.ogg" volume 0.3
     m "Hey guys! Can you get started here? I have a 7:00 bowling party to go to in Purgatory, and I don’t want to be late."
-
+    
 #This is Scene 4
-    scene bg judgement2 with fade
+    scene bg panel with fade
 #This is Scene 5
     #Hides last sprite
     hide character
