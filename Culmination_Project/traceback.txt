@@ -1,15 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 264, in script
-    show jaisen happy with dissolve
-Exception: Image 'jaisen' does not accept attributes 'happy'.
+  File "game/script.rpy", line 455, in script call
+    call Nosport from _call_Nosport
+  File "game/script.rpy", line 732, in script
+    show michael sad with dissolve:
+Exception: Image 'michael' does not accept attributes 'sad'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 264, in script
-    show jaisen happy with dissolve
+  File "game/script.rpy", line 455, in script call
+    call Nosport from _call_Nosport
+  File "game/script.rpy", line 732, in script
+    show michael sad with dissolve:
   File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
   File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
@@ -22,9 +26,9 @@ Full traceback:
     args.extraneous()
   File "D:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
     raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'jaisen' does not accept attributes 'happy'.
+Exception: Image 'michael' does not accept attributes 'sad'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Dearth 1.0
-Sat Dec 10 11:33:45 2022
+Sun Dec 11 17:22:43 2022
