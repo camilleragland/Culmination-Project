@@ -1,34 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 455, in script call
-    call Nosport from _call_Nosport
-  File "game/script.rpy", line 732, in script
-    show michael sad with dissolve:
-Exception: Image 'michael' does not accept attributes 'sad'.
+After initialization, but before game start.
+SyntaxError: unexpected EOF while parsing (game/script.rpy, line 76)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 455, in script call
-    call Nosport from _call_Nosport
-  File "game/script.rpy", line 732, in script
-    show michael sad with dissolve:
-  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
-    renpy.config.show(name,
-  File "D:\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "D:\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
-    self.target = target._duplicate(a)
-  File "D:\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
-    args.extraneous()
-  File "D:\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'michael' does not accept attributes 'sad'.
+  File "D:\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "D:\renpy-8.0.3-sdk\renpy\main.py", line 594, in main
+    renpy.game.script.analyze()
+  File "D:\renpy-8.0.3-sdk\renpy\script.py", line 966, in analyze
+    i.analyze()
+  File "D:\renpy-8.0.3-sdk\renpy\ast.py", line 1419, in analyze
+    self.atl.analyze(EMPTY_PARAMETERS)
+  File "D:\renpy-8.0.3-sdk\renpy\atl.py", line 737, in analyze
+    self.mark_constant(analysis)
+  File "D:\renpy-8.0.3-sdk\renpy\atl.py", line 765, in mark_constant
+    i.mark_constant(analysis)
+  File "D:\renpy-8.0.3-sdk\renpy\atl.py", line 1047, in mark_constant
+    constant = min(constant, is_constant_expr(expr))
+  File "D:\renpy-8.0.3-sdk\renpy\py3analysis.py", line 540, in is_constant_expr
+    node, literal = ccache.ast_eval_literal(expr)
+  File "D:\renpy-8.0.3-sdk\renpy\py3analysis.py", line 772, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "D:\renpy-8.0.3-sdk\renpy\python.py", line 1027, in py_compile
+    raise e
+  File "D:\renpy-8.0.3-sdk\renpy\python.py", line 979, in py_compile
+    raise orig_e
+  File "D:\renpy-8.0.3-sdk\renpy\python.py", line 972, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: unexpected EOF while parsing (game/script.rpy, line 76)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.0.3.22090809
 Dearth 1.0
-Sun Dec 11 17:22:43 2022
+Mon Dec 12 19:59:04 2022

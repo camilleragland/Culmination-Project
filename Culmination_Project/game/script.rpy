@@ -73,7 +73,7 @@ label start:
     p "Is it like Hell? Heaven? Purgatory?{cps=15}....or Florida?{/cps}"
 
     show michael happy with dissolve:
-        xpos 0.25, ypos 0 zpos 1.0 yzoom 1.0 zoom 0.32
+        xpos -0.1, ypos 0.3 zpos 1.0 yzoom 1.0 zoom 0.32
         ease 1.3 xpos -0.1 ypos 0.3 
 
     show michael neutral with dissolve:
@@ -171,7 +171,7 @@ label start:
     play sound "audio/micheal-mad.ogg" volume 0.2
     show michael really angry with dissolve:
         subpixel True pos (0, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
-    m "Why does Rafael keep putting chairs here?! I told him we keep getting complaints from HR for being insensitive!"
+    m "Why does Rafael keep putting chairs here?! I told him we keep getting complaints from Ghostly Resources for being insensitive!"
 
     play sound "audio/micheal-neutral.ogg" volume 0.1
     show michael oops with dissolve
@@ -181,8 +181,15 @@ label start:
     show michael nervous right with dissolve
     m "Oops! I mean...float?"
 
-    p "umm...sure."
-    hide michael with dissolve
+    menu: 
+        "ummm...sure.":
+            call Confused from _call_Confused
+
+        "I'll wait here then":
+            call Umsure from _call_Umsure
+
+        "I'm going to complain to Human Resources!":
+            call Hr from _call_Hr
 
     play sound "audio/lucrecia-mad.ogg" volume 0.2
     show lucrecia angry right with dissolve:
@@ -233,6 +240,7 @@ label start:
 
     show lucrecia neutral left with dissolve:
         subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/chewing.ogg" volume 1.0
     show popcorn with dissolve:
         subpixel True pos (0.5, 0.45) zpos 1.0 yzoom 1.0 zoom 0.32
     l "{i}Crunch, Crunch, Crunch{/i}"
@@ -355,6 +363,7 @@ label start:
 
     show notepad with dissolve:
         subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/writing.ogg" volume 1.5
     show pencil with dissolve:
         subpixel True pos (0.6, 0.25) zpos 1.0 yzoom 1.0 zoom 0.15
 
@@ -455,9 +464,79 @@ label start:
             call Nosport from _call_Nosport
         "YEAH!!!":
             call Jaguars from _call_Jaguars
-
-
+    hide jaisen
 #Question 5
+    show lucrecia with dissolve: 
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/lucrecia-neutral.ogg" volume 0.2 
+    l "Alright this is the last question"
+    l "Are you good with technology?"
+
+    menu: 
+        "Yeah":
+            call Fix from _call_Fix
+        "No.":
+            call Nofix from _call_NoFix
+    
+    hide lucrecia with dissolve
+
+    show beazley happy with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    b "We're all done! We're going to go figure out where you're home will be."
+
+#Last Scene
+    scene bg judgement with fade 
+    show nora happy with dissolve: 
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/nora-happy.ogg" volume 0.2 
+    n "We're done and came with the conclusion here are your results!"
+
+    screen results:
+        image "results.png"
+        text "{size= 150}Results by Points{/size}" color "#000000" xalign 0.5
+        text "{size= 120}Florida: [florida]{/size}" color "#3d57ee" xalign 0.5 yalign 0.2
+        text "{size= 120}Hell: [hell]{/size}" color "#e86f73" xalign 0.5 yalign 0.3
+        text "{size= 120}Purgatory: [purgatory]{/size}" color "#5b826a" xalign 0.5 yalign 0.4
+        text "{size= 120}Heaven: [heaven]{/size}" color "#ca8833" xalign 0.5 yalign 0.5
+
+
+    show screen results
+
+    n "So what do you think?"
+
+    menu: 
+        "I expected this":
+            call Expected from _call_Expected
+        "Are you sure about this":
+            call Unsure from _call_Unsure
+
+    hide screen results
+    hide nora with dissolve
+
+    show beazley happy with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/beazley-happy.ogg" volume 0.2
+    b "Glad you we can help you out with everything!"
+    hide beazley with dissolve
+
+    show lucrecia happy with dissolve: 
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/lucrecia-happy.ogg" volume 0.2
+    l "I'm going to go home and watch my family, my grandaughter is graduating soon"
+    hide lucrecia with dissolve
+
+    show jaisen happy with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/beazley-happy.ogg" volume 0.2
+    j "I'm going to go play with fireworks and watch Shawnshake Redemption again!"
+    hide jaisen with dissolve
+
+    show michael happy with dissolve:
+        subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+    play sound "audio/micheal-happy.ogg" volume 0.2
+    m "Great you guys are done! Now I can go to my bowling party in Purgatory"
+    stop music fadeout 0.5
+    $ renpy.movie_cutscene("credits.webm") 
 
     # This ends the game.
     return
@@ -533,6 +612,31 @@ label start:
         m "Come on, we don’t have all of eternity.{cps=15} Oh, wait....{/cps}we do, but I have better things to do on a Tuesday"
         return
     
+#This is Entering Room Scene
+    label Confused:
+        play sound "audio/micheal-happy.ogg" volume 0.2
+        show michael happy with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        m "Thanks [player]!"
+        return
+
+    label Umsure:
+        play sound "audio/micheal-happy.ogg" volume 0.2
+        show michael happy with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        m "Thanks [player]!"
+        return
+
+    label Hr:
+        play sound "audio/micheal-neutral.ogg" volume 0.2
+        show michael nervous with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        m "We don't have that..but we do have ghostly resources"
+        show michael oops with dissolve:
+        m "Please don't complain, we already have too many."
+        hide michael with dissolve
+        return
+
 #This is Question 1
     label Eating:
         play sound "audio/lucrecia-neutral.ogg" volume 0.2
@@ -708,7 +812,7 @@ label start:
             show jaisen super angry with dissolve:
                 subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
             m "What do you mean who?"
-            $ Florida -= 1
+            $ florida -= 1
 
             return
     
@@ -745,12 +849,87 @@ label start:
         $ florida += 2
     
         return
-
 #This is Question 5
-#This is Question 6
-#This is Question 7
-#This is Question 8
-#This is Question 9
-#This is Question 10
-#This is Question 11
-#This is Question 12
+    label Fix:
+        show lucrecia happy with dissolve: 
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-happy.ogg" volume 0.2 
+        l "Great! Then can you fix my alarm clock?"
+        show clock broken with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+        menu: 
+            "Sure! I just need to set it":
+                call Alarm from _call_Alarm
+            "I'm not sure how to...":
+                call Noalarm from _call_Noalarm
+        return
+
+    label Nofix:
+        show lucrecia sad with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-mad.ogg" volume 0.2 
+        l "My grandaughter would have done it...."
+        return
+    label Alarm:
+        show clock repaired with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+        show lucrecia happy with dissolve: 
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-happy.ogg" volume 0.2 
+        l "Thank you! Can you fix my remote too?"
+        hide clock repaired with dissolve
+        show remote with dissolve:
+            subpixel True pos (0.55, 0.25) zpos 1.0 yzoom 1.0 zoom 0.32
+
+        menu: 
+            "Yeah, I just need batteries to put in it":
+                call Batteries from _call_Batteries
+            "I'm not sure how to...":
+                call Nobatteries from _call_Nobatteries
+        return
+    
+    label Noalarm:
+        show lucrecia sad with dissolve: 
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-mad.ogg" volume 0.2 
+        l "Oh...okay, I was hoping you could fix it..."
+        return
+    
+    label Batteries:
+        show lucrecia happy with dissolve: 
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-happy.ogg" volume 0.2 
+        l "Thank you so much! My grandaughter used to do this for me everyday."
+
+        hide remote with dissolve
+        return
+    
+    label Nobatteries:
+        show lucrecia really sad with dissolve: 
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        play sound "audio/lucrecia-mad.ogg" volume 0.2 
+        l "I wish my grandaughter was here, she would have fixed it."
+
+        hide remote with dissolve
+        return
+
+#Last Scene
+    label Expected:
+        hide screen results with dissolve
+        play sound "audio/nora-happy.ogg" volume 0.1
+        show nora happy with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        n "Good for you [player]! Now let's get you to your new home!"
+        
+        #This returns you to continue the dialogue
+        return
+
+    label Unsure:
+        hide screen results with dissolve
+        play sound "audio/nora-happy.ogg" volume 0.1
+        show nora neutral with dissolve:
+            subpixel True pos (0.25, 0) zpos 1.0 yzoom 1.0 zoom 0.32
+        n "[player] don't worry, you'll enjoy the place."
+        
+        #This returns you to continue the dialogue
+        return

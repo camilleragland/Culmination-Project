@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 727: expected python code
-    $ 
-      ^
+File "game/script.rpy", line 538: expected end of line
+    stop music with fadeout 0.5
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 11 17:20:39 2022
+Mon Dec 12 21:31:58 2022
